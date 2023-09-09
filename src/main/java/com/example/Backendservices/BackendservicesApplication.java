@@ -10,10 +10,10 @@ import java.util.List;
 
 @SpringBootApplication
 @RestController
-@RequestMapping("/portfoliocheck")
+@RequestMapping("api/portfoliocheck")
 public class BackendservicesApplication {
 	@GetMapping
-	public String fectchOrder(){
+	public String fectchOrder (){
 		return "Hello world";
 	}
 	public static void main(String[] args) {
