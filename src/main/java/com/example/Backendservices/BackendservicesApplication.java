@@ -1,5 +1,8 @@
 package com.example.Backendservices;
 
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,9 +15,11 @@ import java.util.List;
 @RestController
 @RequestMapping("api/portfoliocheck")
 public class BackendservicesApplication {
+	@Autowired
+	private OrderDao order;
 	@GetMapping
-	public String fectchOrder (){
-		return "Hello world";
+	public List<Order> fectchOrder (){
+		return order.getOrder();
 	}
 	public static void main(String[] args) {
 		SpringApplication.run(BackendservicesApplication.class, args);
